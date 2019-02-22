@@ -1,0 +1,16 @@
+- name: Create new hosts
+  hosts: flasharray
+  gather_facts: no
+  connection: local
+  tasks:
+    - include_csv: src=storage.csv
+    - name: Create new host
+      purefa_hg:
+        hostgroup: "{{ item.hostg }}"
+        host: "{{ item.host }}"
+        volume: 
+          - "{{ item.vol }}"
+        state: "{{ item.state }}"
+        fa_url: "{{ item.array }}"
+        api_token: "{{ item.token }}"
+      with_items: "{{ storage }}"
