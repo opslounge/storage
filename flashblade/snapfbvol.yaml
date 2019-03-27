@@ -1,0 +1,16 @@
+- name: create a snapshot of a flashblade volume
+  hosts: flashblade
+  gather_facts: no
+  connection: local
+  tasks:
+    - include_csv: src=fbstorage.csv
+    - name: creates a snapshot of a volume in flashblade
+      purefb_snap:
+        name: "{{ item.vol }}"
+        suffix: "{{ item.sx }}"
+        state: "{{ item.state }}"
+        fb_url: "{{ item.array }}"
+        api_token: "{{ item.token }}"
+      with_items: "{{ fbstorage }}"
+
+

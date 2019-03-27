@@ -1,0 +1,13 @@
+######################################################
+###
+###     This playbook invokes plays to do the following
+###     uses the fbstorage.csv  var file to define configs
+###
+###     made by andy parsons 3/27/2019
+###     email aparsons@purestorage.com
+###
+###
+###     this playbook uses the storage.csv to pull data for each item to build
+###
+ - include: addfbvol.yaml # adds a flashblade volume
+ - include: snapfbvol.yaml # snaps the newly created vol
