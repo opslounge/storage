@@ -1,10 +1,10 @@
-- name: Create new hosts
+- name: Create new host groups
   hosts: flasharray
   gather_facts: no
   connection: local
   tasks:
     - include_csv: src=storage.csv
-    - name: Create new host
+    - name: Create new host groups
       purefa_hg:
         hostgroup: "{{ item.hostg }}"
         host: "{{ item.host }}"

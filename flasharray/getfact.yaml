@@ -1,0 +1,7 @@
+- name: collect configuration and capacity facts
+  hosts: flasharray
+  purefa_facts:
+    gather_subset:
+      - config
+    fa_url: 10.226.224.110
+    api_token: aa009fd2-7686-7d48-8698-26b7eb2ae841

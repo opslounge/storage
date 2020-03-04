@@ -6,9 +6,11 @@
 ###     made by andy parsons 8/23/2018
 ###     email aparsons@purestorage.com
 ###
+###     This playbook calls 5 playbooks listed below to create volumes,hosts,and hostgroups, 
+###     It also protects them and connects them. You can use the present,on vars to create, and 
+###     absent,yes to eradicate
 ###
-###     this playbook uses the storage.csv to pull data for each item to build
-###
- - include: addvol.yaml # adds a volume
- - include: addhosts.yaml #adds a host and its wwns
- - include: addhg.yaml # creates a host group and connects the hosts and volumes
+###     
+ - include: addvol.yaml    # adds a volume
+ - include: addhosts.yaml  # adds a host and its wwns
+ - include: addhg.yaml     # creates a host group and connects the hosts and volumesi

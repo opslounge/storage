@@ -1,0 +1,12 @@
+######################################################
+###
+###     This playbook invokes plays to do the following
+###     uses the storage.csv  var file to define configs
+###
+###     made by andy parsons 8/23/2018
+###     email aparsons@purestorage.com
+###
+###
+###     
+ - include: addpg.yaml     # create a protection group and add to offload target
+ - include: addsnap.yaml   # add snapshot of volume

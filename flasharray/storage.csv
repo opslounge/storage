@@ -1,2 +1,4 @@
-id,wwna,wwnb,p_state,vol,size,hostg,proto,array,token
-sn1-r720-e12-ssssss4,21:00:00:24:ff:5d:11:22,21:00:00:24:ff:5d:11:33,present,andysvolume,1t,groupa,fc,sn1-m70-e12-34,206817fa-112d-db3a-8f73-xxxxxxxxxxx
+host,wwna,wwnb,state,era,vol,size,hostg,pg,proto,array,token
+zz-andytest1,21:00:00:24:ff:5d:11:22,21:00:00:24:ff:5d:11:33,present,no,zz-apdev,1t,groupa,pgansible,fc,reddotx,aa009fd2-7686-7d48-8698-26b7eb2ae841
+zz-andytest2,21:00:00:24:ff:5d:11:23,21:00:00:24:ff:5d:11:34,present,no,zz-apdev,1t,groupa,pgansible,fc,reddotx,aa009fd2-7686-7d48-8698-26b7eb2ae841
+zz-andytest3,21:00:00:24:ff:5d:11:24,21:00:00:24:ff:5d:11:35,present,no,zz-apdev,1t,groupa,pgansible,fc,reddotx,aa009fd2-7686-7d48-8698-26b7eb2ae841

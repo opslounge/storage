@@ -1,15 +1,15 @@
-- name: add volumes
+- name: Manage protection groups on Pure Storage FlashArrays
   hosts: flasharray
   gather_facts: no
   connection: local
   tasks:
     - include_csv: src=storage.csv
-    - name: add a volume
-      purefa_volume:
-        name: "{{ item.vol }}" 
-        size: "{{ item.size }}"
+    - name: Create new local protection group 
+      purefa_pg:
+        pgroup: "{{ item.pg }}"
+        hostgroup: "{{ item.hostg }}"
+        target: RedDotFB
         state: "{{ item.state }}"
-        eradicate: "{{ item.era }}"
         fa_url: "{{ item.array }}"
         api_token: "{{ item.token }}"
       with_items: "{{ storage }}"
