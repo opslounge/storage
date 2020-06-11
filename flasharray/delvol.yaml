@@ -1,0 +1,17 @@
+- name: add volumes
+  hosts: flasharray
+  collections: 
+  - purestorage.flasharray
+  gather_facts: no
+  connection: local
+  tasks:
+    - include_csv: src=clean.csv
+    - name: add a volume
+      purefa_volume:
+        name: "{{ item.vol }}" 
+        size: "{{ item.size }}"
+        state: "{{ item.state }}"
+        eradicate: "{{ item.era }}"
+        fa_url: 10.226.224.110
+        api_token: aa009fd2-7686-7d48-8698-26b7eb2ae841
+      with_items: "{{ clean }}"
